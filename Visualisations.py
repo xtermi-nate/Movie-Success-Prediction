@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+#importing imdb datsets
 imdbdata=pd.read_csv('IMDB-Movie-Data.csv')
 from os import path
 
