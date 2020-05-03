@@ -8,22 +8,17 @@ from collections import defaultdict
 import math
 
 from flask import Flask, request
-import json
+
 
 app = Flask(__name__)
 
 
-@app.route('/query-example')
+@app.route('/test')
 def hello_world():
-    return 'Hello World!'
+    return 'Testing connection succeeded'
 
 
-@app.route('/form-example', methods=['POST'])
-def form():
-    return 'new form '
-
-
-@app.route('/json-example', methods=['POST'])  # GET requests will be blocked
+@app.route('/', methods=['POST'])
 def json_example():
     req_data = request.get_json()
     actor1 = req_data['actor1']
@@ -182,8 +177,8 @@ def json_example():
     # the classes of gross calculations
     gross_rate = out[0]
     gross = ""
-    #minimum = 0
-    #maximum = 0
+    # minimum = 0
+    # maximum = 0
     if gross_rate <= 1:
         minimum = 0
         maximum = 1
@@ -223,10 +218,10 @@ def json_example():
         gross = "200+ Million Dollars"
     print("The predicted approximate gross revenue of the movie is:")
     print(gross)
-    avg= np.mean(maximum+minimum)
+    avg = np.mean(maximum + minimum)
     print(avg)
 
-    if (((maximum + minimum) / 2)*1000000) >= (budget + (budget / 2)):
+    if (((maximum + minimum) / 2) * 1000000) >= (budget + (budget / 2)):
         success = "The movie is a success"
     else:
         success = "The movie is not a success"
