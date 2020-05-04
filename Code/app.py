@@ -219,7 +219,7 @@ def json_example():
     print("The predicted approximate gross revenue of the movie is:")
     print(gross)
     avg = np.mean(maximum + minimum)
-    print(avg)
+    #print(avg)
 
     if (((maximum + minimum) / 2) * 1000000) >= (budget + (budget / 2)):
         success = "The movie is a success"
